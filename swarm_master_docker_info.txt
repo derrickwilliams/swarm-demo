@@ -1,0 +1,49 @@
+Containers: 4
+ Running: 4
+ Paused: 0
+ Stopped: 0
+Images: 3
+Server Version: swarm/1.2.2
+Role: primary
+Strategy: spread
+Filters: health, port, containerslots, dependency, affinity, constraint
+Nodes: 3
+ swl-client1: 192.168.99.104:2376
+  └ ID: TYBE:63W2:MTSB:O2FP:CKTG:ZESI:2TQH:T5N4:SP54:JJSJ:MVTT:F5ES
+  └ Status: Healthy
+  └ Containers: 1
+  └ Reserved CPUs: 0 / 1
+  └ Reserved Memory: 0 B / 1.021 GiB
+  └ Labels: executiondriver=, kernelversion=4.4.8-boot2docker, operatingsystem=Boot2Docker 1.11.1 (TCL 7.0); HEAD : 7954f54 - Wed Apr 27 16:36:45 UTC 2016, provider=virtualbox, storagedriver=aufs
+  └ Error: (none)
+  └ UpdatedAt: 2016-05-23T11:37:22Z
+  └ ServerVersion: 1.11.1
+ swl-client2: 192.168.99.103:2376
+  └ ID: PB4C:VJZJ:6FPU:ORSY:5FFE:7725:DI6U:6YUN:HXDK:USUI:ZYIS:S2E4
+  └ Status: Healthy
+  └ Containers: 1
+  └ Reserved CPUs: 0 / 1
+  └ Reserved Memory: 0 B / 1.021 GiB
+  └ Labels: executiondriver=, kernelversion=4.4.8-boot2docker, operatingsystem=Boot2Docker 1.11.1 (TCL 7.0); HEAD : 7954f54 - Wed Apr 27 16:36:45 UTC 2016, provider=virtualbox, storagedriver=aufs
+  └ Error: (none)
+  └ UpdatedAt: 2016-05-23T11:37:55Z
+  └ ServerVersion: 1.11.1
+ swl-master1: 192.168.99.102:2376
+  └ ID: XAEQ:5V54:2UVP:BIRN:ZAQD:CUEM:RYMU:3YNS:VP54:DOO3:DANE:P25S
+  └ Status: Healthy
+  └ Containers: 2
+  └ Reserved CPUs: 0 / 1
+  └ Reserved Memory: 0 B / 1.021 GiB
+  └ Labels: executiondriver=, kernelversion=4.4.8-boot2docker, operatingsystem=Boot2Docker 1.11.1 (TCL 7.0); HEAD : 7954f54 - Wed Apr 27 16:36:45 UTC 2016, provider=virtualbox, storagedriver=aufs
+  └ Error: (none)
+  └ UpdatedAt: 2016-05-23T11:38:05Z
+  └ ServerVersion: 1.11.1
+Plugins: 
+ Volume: 
+ Network: 
+Kernel Version: 4.4.8-boot2docker
+Operating System: linux
+Architecture: amd64
+CPUs: 3
+Total Memory: 3.063 GiB
+Name: swl-master1

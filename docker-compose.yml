@@ -1,0 +1,46 @@
+version: "2"
+services:
+  nginxlb:
+    image: nginx
+    volumes:
+      - "./html:/usr/share/nginx/html"
+      - "./nginx/conf.d/cbax.conf:/etc/nginx/conf.d/cbax.conf"
+    ports:
+      - "8000:80"
+  app:
+    image: derrickwilliams/nodeappbox
+
+  consulmaster:
+    image: consul
+    restart: always
+    ports:
+      - "8300:8300"
+      - "8301:8301"
+      - "8301:8301/udp"
+      - "8302:8302"
+      - "8302:8302/udp"
+      - "8304:8304"
+      - "8305:8305"
+      - "8306:8306"
+      - "8306:8306/udp"
+    volumes:
+      - "$PWD/consul:/consul"
+    command: "consul agent -server -h consul -advertise=192.168.99.100 -bootstrap -ui -data-dir=/consul/data"
+
+  consulagent1:
+    image: consul
+    restart: always
+    network_mode: 'host'
+    ports:
+      - "8300:8300"
+      - "8301:8301"
+      - "8301:8301/udp"
+      - "8302:8302"
+      - "8302:8302/udp"
+      - "8304:8304"
+      - "8305:8305"
+      - "8306:8306"
+      - "8306:8306/udp"
+    volumes:
+      - "$PWD/consul:/consul"
+    command: "consul agent -server -bind=192.168.99.100 -bootstrap-expect=1 -data-dir=/consul/data"
